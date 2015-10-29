@@ -22,18 +22,21 @@ class GameWindow < Gosu::Window
     for i in 0..25
       @rectangle.push(Rectangle.new(rand(640), rand(480), rand(50), rand(50)))
     end
+    # @arrow = []
+    # for i in 0..25
+    # 	@arrow.push(Arrow.new(rand(640), rand(480), rand(50)    """" ))
   end
 
   def draw
     @squares.each { |square| square.draw}
     @triangles.each { |triangle| triangle.draw}
     @rectangle.each { |rectangle| rectangle.draw}
+    # @arrow.each { |arrow| arrow.draw}
   end
 
   def button_down id
     close if id == Gosu::KbEscape
   end
-
 end
 
 window = GameWindow.new
